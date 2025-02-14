@@ -47,8 +47,8 @@
     }
 
     button {
-      padding: 10px 20px;
-      font-size: 18px;
+      padding: 20px 50px;
+      font-size: 30px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
@@ -61,16 +61,6 @@
       background-color: #ff6f61;
       color: white;
     }
-
-    button.no {
-      background-color: #f1faee;
-      color: #333;
-    }
-
-    button:hover {
-      opacity: 0.8;
-    }
-
     /* New content section */
     .thank-you-section {
       display: none;
@@ -84,61 +74,14 @@
   <div class="invitation-container" id="invitationCard">
     <div class="content">
       <!-- Replaced GIF embed with an image -->
-      <img src="./milk-and-mocha.gif" alt="Valentine's GIF">
-      <h1>Will you be my Valentine?</h1>
+      <img src="./fig.gif" alt="Valentine's GIF">
+      <h1>YEY! YOU CAME BACK! Happy Valentine's Day!</h1>
       <div class="buttons">
-        <button class="yes" id="yesBtn" onclick="answer('yes')">Yes</button>
-        <button class="no" id="noBtn" onclick="answer('no')">No</button>
+        <a href="">
+        <button class="yes" id="yesBtn">Click Me!</button>
+        </a>
       </div>
     </div>
   </div>
-
-  <script>
-    let yesBtn = document.getElementById('yesBtn');
-    let scale = 1;
-    let clickCount = 0; // Keep track of the number of "No" clicks
-    let invitationCard = document.getElementById('invitationCard'); // The main card
-    let newGif = 
-      '<img src="./milk-and-mocha-love-you-lots.gif" alt="Love You Lots GIF">';
-
-    function answer(answer) {
-      if (answer === 'no') {
-        // Increment the click count
-        clickCount++;
-
-        if (clickCount <= 7) {
-          // Increase the scale factor for the "Yes" button
-          scale += 0.14; // Increase the size proportionally in 7 clicks
-          yesBtn.style.transform = `scale(${scale})`;
-        }
-
-        if (clickCount === 7) {
-          // On the 7th click, make the "Yes" button take up the entire viewport
-          yesBtn.style.position = 'fixed'; // Fix it in place
-          yesBtn.style.top = 0;
-          yesBtn.style.left = 0;
-          yesBtn.style.width = '100vw'; // Full viewport width
-          yesBtn.style.height = '100vh'; // Full viewport height
-          yesBtn.style.zIndex = 100; // Make sure it's on top
-
-          yesBtn.style.backgroundColor = '#ff6f61'; // You can set this to any solid color you like
-          yesBtn.style.color = 'white'; // Make sure the text is visible on the solid background
-          yesBtn.style.border = 'none'; // Remove the border
-          yesBtn.style.opacity = '1'; // Ensure no transparency
-        }
-      }
-
-      if (answer === 'yes') {
-        // Change the content to the new section with a new GIF
-        invitationCard.innerHTML = `
-          <div class="content">
-            ${newGif}
-            <h1>Yey! Thank you Bebi!</h1>
-            <p>Stay tuned for February 14th! 💖</p>
-          </div>
-        `;
-      }
-    }
-  </script>
 </body>
 </html>
